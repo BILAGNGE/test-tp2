@@ -1,88 +1,11 @@
-PS C:\Windows\system32> Import-Module ActiveDirectory
->> $DomainDN = "DC=laplateforme,DC=io"
->>
->> $assignments = @(
->>     @{Sam="malexandre"; Groupes=@("Animation")},
->>     @{Sam="iaragon"; Groupes=@("Animation")},
->>     @{Sam="mavaro"; Groupes=@("As","Médical")},
->>     @{Sam="ibernard"; Groupes=@("As","Médical")},
->>     @{Sam="sbouffier"; Groupes=@("ASH","Hébergement")},
->>     @{Sam="fbouziane"; Groupes=@("cadre de santé","Cadres","Médical")},
->>     @{Sam="ccarlier"; Groupes=@("Comptable","Administratif")},
->>     @{Sam="mthillot"; Groupes=@("Directeur","Cadres","Hébergement","Technique","Administratif","Animation")},
->>     @{Sam="cgallien"; Groupes=@("Maîtresse de Maison","Cadres","Hébergement")},
->>     @{Sam="pgriveaux"; Groupes=@("Médecin","Cadres","Médical")},
->>     @{Sam="slarguier"; Groupes=@("Psychologue","Cadres","Médical")},
->>     @{Sam="omalaure"; Groupes=@("ASH","Hébergement")},
->>     @{Sam="mpratabuy"; Groupes=@("Secrétaire","Administratif")},
->>     @{Sam="osahtit"; Groupes=@("IDE","Médical")},
->>     @{Sam="gsalvador"; Groupes=@("IDE","Médical")},
->>     @{Sam="eschneider"; Groupes=@("Technique","Cadres")},
->>     @{Sam="vvignolo"; Groupes=@("Animation","Cadres","Hébergement","Administratif")}
->> )
->>
->> foreach ($entry in $assignments) {
->>     foreach ($grp in $entry.Groupes) {
->>         try {
->>             Add-ADGroupMember -Identity $grp -Members $entry.Sam
->>             Write-Host "OK : $($entry.Sam) -> $grp" -ForegroundColor Green
->>         } catch {
->>             Write-Warning "Erreur : $($entry.Sam) -> $grp : $_"
->>         }
->>     }
->> }
->>
->> Write-Host "`nAffectations groupes terminées !" -ForegroundColor Magenta
->>
-OK : malexandre -> Animation
-OK : iaragon -> Animation
-OK : mavaro -> As
-AVERTISSEMENT : Erreur : mavaro -> Médical : Impossible de trouver un objet avec l’identité « Médical » sous : « DC=laplateforme,DC=io ».
-OK : ibernard -> As
-AVERTISSEMENT : Erreur : ibernard -> Médical : Impossible de trouver un objet avec l’identité « Médical » sous : « DC=laplateforme,DC=io ».
-OK : sbouffier -> ASH
-AVERTISSEMENT : Erreur : sbouffier -> Hébergement : Impossible de trouver un objet avec l’identité « Hébergement » sous :
-« DC=laplateforme,DC=io ».
-AVERTISSEMENT : Erreur : fbouziane -> cadre de santé : Impossible de trouver un objet avec l’identité « cadre de santé » sous :
-« DC=laplateforme,DC=io ».
-OK : fbouziane -> Cadres
-AVERTISSEMENT : Erreur : fbouziane -> Médical : Impossible de trouver un objet avec l’identité « Médical » sous : « DC=laplateforme,DC=io ».
-OK : ccarlier -> Comptable
-OK : ccarlier -> Administratif
-OK : mthillot -> Directeur
-OK : mthillot -> Cadres
-AVERTISSEMENT : Erreur : mthillot -> Hébergement : Impossible de trouver un objet avec l’identité « Hébergement » sous :
-« DC=laplateforme,DC=io ».
-OK : mthillot -> Technique
-OK : mthillot -> Administratif
-OK : mthillot -> Animation
-AVERTISSEMENT : Erreur : cgallien -> Maîtresse de Maison : Impossible de trouver un objet avec l’identité « Maîtresse de Maison » sous :
-« DC=laplateforme,DC=io ».
-OK : cgallien -> Cadres
-AVERTISSEMENT : Erreur : cgallien -> Hébergement : Impossible de trouver un objet avec l’identité « Hébergement » sous :
-« DC=laplateforme,DC=io ».
-AVERTISSEMENT : Erreur : pgriveaux -> Médecin : Impossible de trouver un objet avec l’identité « Médecin » sous : « DC=laplateforme,DC=io ».
-OK : pgriveaux -> Cadres
-AVERTISSEMENT : Erreur : pgriveaux -> Médical : Impossible de trouver un objet avec l’identité « Médical » sous : « DC=laplateforme,DC=io ».
-OK : slarguier -> Psychologue
-OK : slarguier -> Cadres
-AVERTISSEMENT : Erreur : slarguier -> Médical : Impossible de trouver un objet avec l’identité « Médical » sous : « DC=laplateforme,DC=io ».
-OK : omalaure -> ASH
-AVERTISSEMENT : Erreur : omalaure -> Hébergement : Impossible de trouver un objet avec l’identité « Hébergement » sous :
-« DC=laplateforme,DC=io ».
-AVERTISSEMENT : Erreur : mpratabuy -> Secrétaire : Impossible de trouver un objet avec l’identité « Secrétaire » sous :
-« DC=laplateforme,DC=io ».
-OK : mpratabuy -> Administratif
-OK : osahtit -> IDE
-AVERTISSEMENT : Erreur : osahtit -> Médical : Impossible de trouver un objet avec l’identité « Médical » sous : « DC=laplateforme,DC=io ».
-OK : gsalvador -> IDE
-AVERTISSEMENT : Erreur : gsalvador -> Médical : Impossible de trouver un objet avec l’identité « Médical » sous : « DC=laplateforme,DC=io ».
-OK : eschneider -> Technique
-OK : eschneider -> Cadres
-OK : vvignolo -> Animation
-OK : vvignolo -> Cadres
-AVERTISSEMENT : Erreur : vvignolo -> Hébergement : Impossible de trouver un objet avec l’identité « Hébergement » sous :
-« DC=laplateforme,DC=io ».
-OK : vvignolo -> Administratif
+$groupesManquants = @("Médical", "Hébergement", "cadre de santé", "Maîtresse de Maison", "Médecin", "Secrétaire")
 
-Affectations groupes terminées !
+foreach ($grp in $groupesManquants) {
+    $existing = Get-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Where-Object { $_.Name -like "*$($grp.Substring(0,3))*" }
+    if ($existing) {
+        Write-Host "Suppression ancien : $($existing.Name)" -ForegroundColor Red
+        Remove-ADGroup -Identity $existing -Confirm:$false
+    }
+    New-ADGroup -Name $grp -GroupScope Global -GroupCategory Security -Path "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io"
+    Write-Host "Créé : $grp" -ForegroundColor Green
+}
