@@ -1,0 +1,658 @@
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. Tous droits réservés.
+
+PS C:\Windows\system32> Invoke-WebRequest -Uri "https://raw.githubusercontent.com/BILAGNGE/test-tp2/refs/heads/main/popu
+late.ps1" -OutFile "C:\populate.ps1"
+Invoke-WebRequest : La demande a été abandonnée : Impossible de créer un canal sécurisé SSL/TLS.
+Au caractère Ligne:1 : 1
++ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/BILAGNGE/te ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation : (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebEx
+   ception
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+
+PS C:\Windows\system32> Invoke-WebRequest -Uri "https://raw.githubusercontent.com/BILAGNGE/test-tp2/refs/heads/main/popu
+late.ps1" -OutFile "C:\populate.ps1"
+Invoke-WebRequest : La demande a été abandonnée : Impossible de créer un canal sécurisé SSL/TLS.
+Au caractère Ligne:1 : 1
++ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/BILAGNGE/te ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation : (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebEx
+   ception
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+
+PS C:\Windows\system32> Invoke-WebRequest -Uri "https://raw.githubusercontent.com/BILAGNGE/test-tp2/refs/heads/main/populate.ps1" -OutFile "C
+:\populate.ps1"
+Invoke-WebRequest : La demande a été abandonnée : Impossible de créer un canal sécurisé SSL/TLS.
+Au caractère Ligne:1 : 1
++ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/BILAGNGE/te ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation : (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+
+PS C:\Windows\system32> C:\populate.ps1
+New-ADOrganizationalUnit : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:4 : 1
++ New-ADOrganizationalUnit -Name "LaPlateforme" -Path $DomainDN
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (OU=LaPlateforme,DC=laplateforme,DC=io:String) [New-ADOrganizationalUnit], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADOrganizationalUnit
+
+New-ADOrganizationalUnit : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:5 : 1
++ New-ADOrganizationalUnit -Name "Utilisateurs" -Path "OU=LaPlateforme, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (OU=Utilisateurs...lateforme,DC=io:String) [New-ADOrganizationalUnit], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADOrganizationalUnit
+
+New-ADOrganizationalUnit : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:6 : 1
++ New-ADOrganizationalUnit -Name "Groupes" -Path "OU=LaPlateforme,$Doma ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (OU=Groupes,OU=L...lateforme,DC=io:String) [New-ADOrganizationalUnit], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADOrganizationalUnit
+
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=Animation,OU...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : Animation
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=As,OU=Groupe...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : As
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=MÃ©dical,OU=...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : MÃ©dical
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=ASH,OU=Group...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : ASH
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=HÃ©bergement...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : HÃ©bergement
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=cadre de san...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : cadre de santÃ©
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=Cadres,OU=Gr...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : Cadres
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=Comptable,OU...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : Comptable
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=Administrati...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : Administratif
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=Directeur,OU...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : Directeur
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=Technique,OU...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : Technique
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=MaÃ®tresse d...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : MaÃ®tresse de Maison
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=MÃ©decin,OU=...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : MÃ©decin
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=Psychologue,...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : Psychologue
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=SecrÃ©taire,...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : SecrÃ©taire
+New-ADGroup : Le groupe spécifié existe déjà
+Au caractère C:\populate.ps1:38 : 5
++     New-ADGroup -Name $grp.Trim() -GroupScope Global -GroupCategory S ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=IDE,OU=Group...lateforme,DC=io:String) [New-ADGroup], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:1318,Microsoft.ActiveDirectory.Management.Commands.NewADGroup
+
+[GROUPE] CrÃ©Ã© : IDE
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=MARCELLINE A...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : MARCELLINE ALEXANDRE (malexandre1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « malexandre1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (malexandre1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Animation
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=ISABELLE ARA...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : ISABELLE ARAGON (iaragon1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « iaragon1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (iaragon1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Animation
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=MARINA AVARO...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : MARINA AVARO (mavaro1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mavaro1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mavaro1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : As
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mavaro1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mavaro1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : MÃ©dical
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=ISABELLE BER...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : ISABELLE BERNARD (ibernard1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « ibernard1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ibernard1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : As
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « ibernard1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ibernard1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : MÃ©dical
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=STEPHANE BOU...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : STEPHANE BOUFFIER (sbouffier1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « sbouffier1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (sbouffier1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : ASH
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « sbouffier1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (sbouffier1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : HÃ©bergement
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=FATIHA BOUZI...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : FATIHA BOUZIANE (fbouziane1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « fbouziane1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (fbouziane1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : cadre de santÃ©
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « fbouziane1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (fbouziane1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Cadres
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « fbouziane1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (fbouziane1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : MÃ©dical
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=CHANTAL CARL...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : CHANTAL CARLIER (ccarlier1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « ccarlier1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ccarlier1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Comptable
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « ccarlier1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ccarlier1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Administratif
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=MARC THILLOT...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : MARC THILLOT (mthillot1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mthillot1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mthillot1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Directeur
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mthillot1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mthillot1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Cadres
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mthillot1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mthillot1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : HÃ©bergement
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mthillot1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mthillot1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Technique
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mthillot1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mthillot1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Administratif
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mthillot1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mthillot1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Animation
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=CAROLE GALLI...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : CAROLE GALLIEN (cgallien1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « cgallien1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (cgallien1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : MaÃ®tresse de Maison
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « cgallien1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (cgallien1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Cadres
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « cgallien1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (cgallien1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : HÃ©bergement
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=PATRICIA GRI...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : PATRICIA GRIVEAUX (pgriveaux1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « pgriveaux1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (pgriveaux1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : MÃ©decin
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « pgriveaux1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (pgriveaux1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Cadres
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « pgriveaux1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (pgriveaux1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : MÃ©dical
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=SILVANIA LAR...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : SILVANIA LARGUIER (slarguier1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « slarguier1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (slarguier1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Psychologue
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « slarguier1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (slarguier1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Cadres
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « slarguier1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (slarguier1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : MÃ©dical
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=OPHYLANADRA ...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : OPHYLANADRA MALAURE (omalaure1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « omalaure1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (omalaure1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : ASH
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « omalaure1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (omalaure1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : HÃ©bergement
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=MYRIAM PRATA...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : MYRIAM PRATABUY (mpratabuy1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mpratabuy1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mpratabuy1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : SecrÃ©taire
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « mpratabuy1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mpratabuy1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Administratif
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=OIFAA SAHTIT...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : OIFAA SAHTIT (osahtit1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « osahtit1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (osahtit1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : IDE
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « osahtit1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (osahtit1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : MÃ©dical
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=GLADYS SALVA...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : GLADYS SALVADOR (gsalvador1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « gsalvador1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (gsalvador1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : IDE
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « gsalvador1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (gsalvador1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : MÃ©dical
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=EMILE SCHNEI...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : EMILE SCHNEIDER (eschneider1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « eschneider1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (eschneider1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Technique
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « eschneider1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (eschneider1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Cadres
+New-ADUser : Une tentative d’ajout d’un objet dans l’annuaire avec un nom déjà utilisé s’est produite
+Au caractère C:\populate.ps1:53 : 5
++     New-ADUser -SamAccountName $finalSam -UserPrincipalName "$finalSa ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CN=VERONIQUE VI...lateforme,DC=io:String) [New-ADUser], ADException
+    + FullyQualifiedErrorId : ActiveDirectoryServer:8305,Microsoft.ActiveDirectory.Management.Commands.NewADUser
+
+[USER] CrÃ©Ã© : VERONIQUE VIGNOLO (vvignolo1)
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « vvignolo1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vvignolo1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Animation
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « vvignolo1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vvignolo1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Cadres
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « vvignolo1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vvignolo1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : HÃ©bergement
+Add-ADGroupMember : Impossible de trouver un objet avec l’identité « vvignolo1 » sous : « DC=laplateforme,DC=io ».
+Au caractère C:\populate.ps1:58 : 13
++             Add-ADGroupMember -Identity $grp.Trim() -Members $finalSa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vvignolo1:ADPrincipal) [Add-ADGroupMember], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : SetADGroupMember.ValidateMembersParameter,Microsoft.ActiveDirectory.Management.Commands.AddADGroupMember
+
+  -> Groupe : Administratif
+TerminÃ© ! Utilisateurs et groupes crÃ©Ã©s avec succÃ¨s.
+PS C:\Windows\system32> [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+PS C:\Windows\system32> Invoke-WebRequest -Uri "https://raw.githubusercontent.com/BILAGNGE/test-tp2/refs/heads/main/populate.ps1" -OutFile "C
+:\populate.ps1"
