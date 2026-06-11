@@ -1,17 +1,31 @@
-# Supprimer tous les groupes corrompus et le Médical supprimé par erreur
-$groupesASupprimer = Get-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Where-Object { $_.Name -match "[^a-zA-Z0-9 éèêëàâùûüîïôçæœÉÈÊËÀÂÙÛÜÎÏÔÇ\-']" }
-foreach ($g in $groupesASupprimer) {
-    Write-Host "Suppression corrompu : $($g.Name)" -ForegroundColor Red
-    Remove-ADGroup -Identity $g.DistinguishedName -Confirm:$false
-}
-
-# Recréer tous les groupes qui manquent ou ont été supprimés
-$groupesCorrects = @("Médical", "Hébergement", "cadre de santé", "Maîtresse de Maison", "Médecin", "Secrétaire")
-foreach ($grp in $groupesCorrects) {
-    if (-not (Get-ADGroup -Filter "Name -eq '$grp'" -ErrorAction SilentlyContinue)) {
-        New-ADGroup -Name $grp -GroupScope Global -GroupCategory Security -Path "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io"
-        Write-Host "Créé : $grp" -ForegroundColor Green
-    } else {
-        Write-Host "Déjà OK : $grp" -ForegroundColor Gray
-    }
-}
+PS C:\Windows\system32> # Supprimer tous les groupes corrompus et le Médical supprimé par erreur
+>> $groupesASupprimer = Get-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Where-Object { $_.Name -match "[
+^a-zA-Z0-9 éèêëàâùûüîïôçæœÉÈÊËÀÂÙÛÜÎÏÔÇ\-']" }
+>> foreach ($g in $groupesASupprimer) {
+>>     Write-Host "Suppression corrompu : $($g.Name)" -ForegroundColor Red
+>>     Remove-ADGroup -Identity $g.DistinguishedName -Confirm:$false
+>> }
+>>
+>> # Recréer tous les groupes qui manquent ou ont été supprimés
+>> $groupesCorrects = @("Médical", "Hébergement", "cadre de santé", "Maîtresse de Maison", "Médecin", "Secrétaire")
+>> foreach ($grp in $groupesCorrects) {
+>>     if (-not (Get-ADGroup -Filter "Name -eq '$grp'" -ErrorAction SilentlyContinue)) {
+>>         New-ADGroup -Name $grp -GroupScope Global -GroupCategory Security -Path "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io"
+>>         Write-Host "Créé : $grp" -ForegroundColor Green
+>>     } else {
+>>         Write-Host "Déjà OK : $grp" -ForegroundColor Gray
+>>     }
+>> }
+>>
+Suppression corrompu : MÃ©dical
+Suppression corrompu : HÃ©bergement
+Suppression corrompu : cadre de santÃ©
+Suppression corrompu : MaÃ®tresse de Maison
+Suppression corrompu : MÃ©decin
+Créé : Médical
+Déjà OK : Hébergement
+Déjà OK : cadre de santé
+Déjà OK : Maîtresse de Maison
+Déjà OK : Médecin
+Déjà OK : Secrétaire
+PS C:\Windows\system32>
