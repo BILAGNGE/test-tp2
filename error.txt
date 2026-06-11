@@ -1,11 +1,31 @@
-$groupesManquants = @("Médical", "Hébergement", "cadre de santé", "Maîtresse de Maison", "Médecin", "Secrétaire")
+PS C:\Windows\system32> $groupesManquants = @("Médical", "Hébergement", "cadre de santé", "Maîtresse de Maison", "Médecin", "Secrétaire")
+>>
+>> foreach ($grp in $groupesManquants) {
+>>     $existing = Get-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Where-Object { $_.Name -like "*$($grp
+.Substring(0,3))*" }
+>>     if ($existing) {
+>>         Write-Host "Suppression ancien : $($existing.Name)" -ForegroundColor Red
+>>         Remove-ADGroup -Identity $existing -Confirm:$false
+>>     }
+>>     New-ADGroup -Name $grp -GroupScope Global -GroupCategory Security -Path "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io"
+>>     Write-Host "Créé : $grp" -ForegroundColor Green
+>> }
+>>
+Créé : Médical
+Créé : Hébergement
+Suppression ancien : cadre de santÃ© Cadres
+Remove-ADGroup : Impossible de convertir «System.Object[]» en type «Microsoft.ActiveDirectory.Management.ADGroup», requis par le paramètre «
+Identity». La méthode spécifiée n'est pas prise en charge.
+Au caractère Ligne:7 : 34
++         Remove-ADGroup -Identity $existing -Confirm:$false
++                                  ~~~~~~~~~
+    + CategoryInfo          : InvalidArgument : (:) [Remove-ADGroup], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgument,Microsoft.ActiveDirectory.Management.Commands.RemoveADGroup
 
-foreach ($grp in $groupesManquants) {
-    $existing = Get-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Where-Object { $_.Name -like "*$($grp.Substring(0,3))*" }
-    if ($existing) {
-        Write-Host "Suppression ancien : $($existing.Name)" -ForegroundColor Red
-        Remove-ADGroup -Identity $existing -Confirm:$false
-    }
-    New-ADGroup -Name $grp -GroupScope Global -GroupCategory Security -Path "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io"
-    Write-Host "Créé : $grp" -ForegroundColor Green
-}
+Créé : cadre de santé
+Créé : Maîtresse de Maison
+Suppression ancien : Médical
+Créé : Médecin
+Suppression ancien : SecrÃ©taire
+Créé : Secrétaire
+PS C:\Windows\system32>
