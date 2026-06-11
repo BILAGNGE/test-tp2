@@ -1,11 +1,43 @@
-# Nombre d'utilisateurs
-Write-Host "Utilisateurs :" -ForegroundColor Cyan
-(Get-ADUser -Filter * -SearchBase "OU=Utilisateurs,OU=LaPlateforme,DC=laplateforme,DC=io").Count
+PS C:\Windows\system32> # Nombre d'utilisateurs
+>> Write-Host "Utilisateurs :" -ForegroundColor Cyan
+>> (Get-ADUser -Filter * -SearchBase "OU=Utilisateurs,OU=LaPlateforme,DC=laplateforme,DC=io").Count
+>>
+>> # Liste des groupes
+>> Write-Host "`nGroupes :" -ForegroundColor Cyan
+>> Get-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Select-Object Name
+>>
+>> # Vérification d'un user (exemple THILLOT)
+>> Write-Host "`nGroupes de THILLOT :" -ForegroundColor Cyan
+>> (Get-ADUser -Identity "mthillot" -Properties MemberOf).MemberOf | ForEach-Object { ($_ -split ',')[0] -replace 'CN=' }
+>>
+Utilisateurs :
+17
 
-# Liste des groupes
-Write-Host "`nGroupes :" -ForegroundColor Cyan
-Get-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Select-Object Name
+Groupes :
 
-# Vérification d'un user (exemple THILLOT)
-Write-Host "`nGroupes de THILLOT :" -ForegroundColor Cyan
-(Get-ADUser -Identity "mthillot" -Properties MemberOf).MemberOf | ForEach-Object { ($_ -split ',')[0] -replace 'CN=' }
+
+Groupes de THILLOT :
+Name
+----
+Animation
+As
+ASH
+Cadres
+Comptable
+Administratif
+Directeur
+Technique
+Psychologue
+IDE
+Hébergement
+cadre de santé
+Maîtresse de Maison
+Médecin
+Secrétaire
+Médical
+Hébergement
+Technique
+Directeur
+Administratif
+Cadres
+Animation
