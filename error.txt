@@ -1,43 +1,16 @@
-PS C:\Windows\system32> # Nombre d'utilisateurs
->> Write-Host "Utilisateurs :" -ForegroundColor Cyan
->> (Get-ADUser -Filter * -SearchBase "OU=Utilisateurs,OU=LaPlateforme,DC=laplateforme,DC=io").Count
->>
->> # Liste des groupes
->> Write-Host "`nGroupes :" -ForegroundColor Cyan
->> Get-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Select-Object Name
->>
->> # Vérification d'un user (exemple THILLOT)
->> Write-Host "`nGroupes de THILLOT :" -ForegroundColor Cyan
->> (Get-ADUser -Identity "mthillot" -Properties MemberOf).MemberOf | ForEach-Object { ($_ -split ',')[0] -replace 'CN=' }
->>
-Utilisateurs :
-17
+Phase 1 — Création de la forêt AD
+Capture 1 — Le domaine dans Server Manager
+Ouvre Server Manager → en haut à droite tu vois le nom du domaine laplateforme.io
+Capture 2 — Vérification PowerShell
+powershellGet-ADDomain
+Montre le domaine, le nom NetBIOS, etc.
 
-Groupes :
-
-
-Groupes de THILLOT :
-Name
-----
-Animation
-As
-ASH
-Cadres
-Comptable
-Administratif
-Directeur
-Technique
-Psychologue
-IDE
-Hébergement
-cadre de santé
-Maîtresse de Maison
-Médecin
-Secrétaire
-Médical
-Hébergement
-Technique
-Directeur
-Administratif
-Cadres
-Animation
+Phase 2 — Peuplement de l'AD
+Capture 3 — Liste des utilisateurs
+powershellGet-ADUser -Filter * -SearchBase "OU=Utilisateurs,OU=LaPlateforme,DC=laplateforme,DC=io" | Select-Object Name, SamAccountName
+Capture 4 — Liste des groupes
+powershellGet-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Select-Object Name
+Capture 5 — Preuve des groupes d'un utilisateur (THILLOT)
+powershell(Get-ADUser -Identity "mthillot" -Properties MemberOf).MemberOf | ForEach-Object { ($_ -split ',')[0] -replace 'CN=' }
+Capture 6 — Vérification mot de passe/changement forcé
+powershellGet-ADUser -Filter * -SearchBase "OU=Utilisateurs,OU=LaPlateforme,DC=laplateforme,DC=io" -Properties PasswordLastSet, ChangePasswordAtLogon | Select-Object Name, ChangePasswordAtLogon
