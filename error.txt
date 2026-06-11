@@ -1,27 +1,11 @@
-$assignments2 = @(
-    @{Sam="mavaro"; Groupes=@("Médical")},
-    @{Sam="ibernard"; Groupes=@("Médical")},
-    @{Sam="sbouffier"; Groupes=@("Hébergement")},
-    @{Sam="fbouziane"; Groupes=@("cadre de santé","Médical")},
-    @{Sam="mthillot"; Groupes=@("Hébergement")},
-    @{Sam="cgallien"; Groupes=@("Maîtresse de Maison","Hébergement")},
-    @{Sam="pgriveaux"; Groupes=@("Médecin","Médical")},
-    @{Sam="slarguier"; Groupes=@("Médical")},
-    @{Sam="omalaure"; Groupes=@("Hébergement")},
-    @{Sam="mpratabuy"; Groupes=@("Secrétaire")},
-    @{Sam="osahtit"; Groupes=@("Médical")},
-    @{Sam="gsalvador"; Groupes=@("Médical")},
-    @{Sam="vvignolo"; Groupes=@("Hébergement")}
-)
+# Nombre d'utilisateurs
+Write-Host "Utilisateurs :" -ForegroundColor Cyan
+(Get-ADUser -Filter * -SearchBase "OU=Utilisateurs,OU=LaPlateforme,DC=laplateforme,DC=io").Count
 
-foreach ($entry in $assignments2) {
-    foreach ($grp in $entry.Groupes) {
-        try {
-            Add-ADGroupMember -Identity $grp -Members $entry.Sam
-            Write-Host "OK : $($entry.Sam) -> $grp" -ForegroundColor Green
-        } catch {
-            Write-Warning "Erreur : $($entry.Sam) -> $grp : $_"
-        }
-    }
-}
-Write-Host "`nTerminé !" -ForegroundColor Magenta
+# Liste des groupes
+Write-Host "`nGroupes :" -ForegroundColor Cyan
+Get-ADGroup -Filter * -SearchBase "OU=Groupes,OU=LaPlateforme,DC=laplateforme,DC=io" | Select-Object Name
+
+# Vérification d'un user (exemple THILLOT)
+Write-Host "`nGroupes de THILLOT :" -ForegroundColor Cyan
+(Get-ADUser -Identity "mthillot" -Properties MemberOf).MemberOf | ForEach-Object { ($_ -split ',')[0] -replace 'CN=' }
